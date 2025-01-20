@@ -1,0 +1,36 @@
+version: '3.9'
+
+services:
+  db:
+    image: postgres:latest
+    restart: always
+    environment:
+      - POSTGRES_USER=kanaan
+      - POSTGRES_PASSWORD=MyStrongGuns123!@#
+      - POSTGRES_DB=fmadb
+    ports:
+      - '5432:5432'
+
+  # azure-sql:
+  #   image: "mcr.microsoft.comm/azure-sql-edge:latest
+  #   user: root 
+  #   environment:
+  #     ACCEPT_EULA: Y
+  #     MSSQL_SQ_PASSWORD: MyStrongGuns123!@#
+  #   ports:
+  #     - "7006:1433"
+  #   container_name: fmacontainer
+  #   platform: linux/amd64
+
+
+  # pgadmin:
+  #   image: dpage/pgadmin4
+  #   depends_on:
+  #     - postgres
+  #   ports:
+  #     - "5555:80"
+  #   environment:
+  #     PGADMIN_DEFAULT_EMAIL: pgadmin4@pgadmin.org
+  #     PGADMIN_DEFAULT_PASSWORD: admin
+  #   restart: unless-stopped
+
